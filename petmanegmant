@@ -1,0 +1,40 @@
+class Pet:
+    def __init__(self, name, animal_type, age):
+        self.name = name
+        self.animal_type = animal_type
+        self.age = age
+        
+    def display_info(self):
+        print(f"Name :{self.name}, Type: {self.animal_type}, Age :{self.age}")
+        
+    def get_stage(self):
+        if self.age <= 1:
+            return "ベビー"
+        elif 2 <= self.age <= 4:
+            return "ヤング"
+        else:
+            return "アダルト"
+        
+    def make_sound(self):
+        if self.animal_type == "dog":
+            print("ワンワン！")
+            
+        elif self.animal_type == "cat":
+            print("ニャー！")
+            
+        elif self.animal_type == "hamster":
+            print("チューチュー！")
+        else:
+            print("謎の存在")
+            
+pets = []
+
+pets.append(Pet("Momo", "cat", 3))
+pets.append(Pet("Pochi", "dog", 5))
+pets.append(Pet("Chibi", "hamster", 1))
+
+for pet in pets:
+    pet.display_info()
+    print(f"Stage: {pet.get_stage()}")
+    pet.make_sound()
+    print("=========")
